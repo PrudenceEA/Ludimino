@@ -1,0 +1,109 @@
+.main {
+  /*padding: 0rem 6rem 3rem 6rem;*/ 
+  margin: 0vh 8vw 3vh 8vw;
+  max-height: 100%;
+}
+
+.header {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  text-align: center;
+  letter-spacing: 1px;
+  line-height: 1.4;
+  margin: 2vw;
+}
+
+.homeContent { 
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  height: 70vh;
+  width: 80vw;
+  /*padding: 0rem 2rem;*/
+}  
+
+.ludiminoRecto {
+  width: 17.7vw;
+  height: fit-content;
+}
+
+.ludiVideo {
+  width: 45vw;
+  height: max-content;
+  vertical-align: middle;
+  margin: 10px; 
+}
+
+.menu {
+  width: 14vw;
+  height: fit-content;
+ }
+.menuImage {
+  margin-top: 10px;
+  text-align: center;
+}
+
+ul.menuList>li {
+  background: black;
+  border: 1px solid yellow;
+  color: white;
+  letter-spacing: 1px; 
+  vertical-align: middle; 
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+  list-style: none;
+}
+
+/* mobile */ 
+@media (max-width : 767px) {
+  .main {
+    margin: 0vh 1vw;
+    max-height: 100vh;
+  }
+  .header { 
+    display: none;
+  }
+  .homeContent { 
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap; 
+    align-items: center;
+    justify-content: center;
+
+  } 
+  .ludiminoRecto {
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    /*width: 50vw;
+    height: 30%;*/
+  } 
+  .ludiVideo {
+    width: 45vw; 
+    text-align: center;
+    /*height: 30%;*/
+    vertical-align: middle;
+    margin: 10px; 
+  }
+  .menu {
+    display: none;
+  } 
+
+} 
+
+/* Tablet */
+
+/*@media (min-width: 768px) and (max-width: 991px) { 
+	#container {
+		flex-wrap: wrap;
+	}
+	#menu1, #menu2 {
+		width: 47.33%;
+	}
+	#menu3 {		
+		flex-basis: 98%; 	
+	}
+} */
