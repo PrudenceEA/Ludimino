@@ -1,23 +1,21 @@
 import Image from "next/image";
-import footerStyles from "../styles/footer.module.css";
 import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className={footerStyles.footer}>
+    <footer className="flex items-center justify-around px-2 py-2 border-2 border-solid-white font-serif">
       <div>
         <span>
           Copyright {new Date().getFullYear()} Ludimino - Tous droits réservés
         </span>
-        <span className={footerStyles.footerSpan}>
-          <Link href={"/"}>Mentions Légales</Link>{" "}
+        <span className="ml-5 hover:no-underline">
+          <Link href="/" className="text-black underline">Mentions Légales</Link>
         </span>
-        <span className={footerStyles.footerSpan}>
-          {" "}
-          <Link href={"/"}>Politique de confidentialité</Link>{" "}
+        <span className="ml-5">
+          <Link href="/" className="text-black underline">Politique de confidentialité</Link>
         </span>
       </div>
-      <div className={footerStyles.langue}>
+      <div className="mr-5">
         <Link href={"/"}>
           <Image src={"/drapeau.png"} alt="langue" width={125} height={28} />
         </Link>
