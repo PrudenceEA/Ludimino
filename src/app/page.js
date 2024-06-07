@@ -6,29 +6,25 @@ import MobileHeader from "./components/MobileHeader";
 
 export default function Home() {
   return (
-    <main className={styles.main}> 
-    <div className="md:invisible lg:invisible"> 
-      <MobileHeader/>
-    </div>
+    <main className="mx-[8vw] py-[3vh]">
       <div>
-        <h3 className={styles.header}>
-          {" "}
-          Un jeu ludique, intergénérationnel, pédagogique et cérébral <br/> qui fait
-          appel à des qualités d’observation et de concentration.
+        <h3 className="flex items-center justify-center text-uppercase m-[1.5vw] leading-8 text-center text-base	">
+          Un jeu ludique, intergénérationnel, pédagogique et cérébral <br /> qui
+          fait appel à des qualités d’observation et de concentration.
         </h3>
       </div>
-      <div className={styles.homeContent}>
-        <div className={styles.ludiminoRecto}>
+      <div className="flex items-center justify-between space-x-0.5">
+        <div className="h-fit w-[15.5vw]">
           <Image
             src={"/ludimino-boite-recto_xd.png"}
             alt="Ludimino"
-            width={245}
-            height={400}
+            width={3245}
+            height={320}
           />
         </div>
-        <div className= {styles.ludiVideo}>
-          <video 
-          responsive="true"
+        <div className="m-[10px] w-[45vw]">
+          <video
+            responsive="true"
             id="my-video"
             controls={false}
             width="100%"
@@ -36,14 +32,14 @@ export default function Home() {
             autoPlay
             loop
             muted
-            preload= "auto"
+            preload="auto"
             modal="false"
             src="/LudiminoBack_Video.mp4"
             typeof="video/mp4"
           />
         </div>
-        <div className={styles.menu}>
-          <div className={styles.menuImage}>
+        <div className="flex flex-col items-center w-[14vw] h-full">
+          <div className="mt-[10px] text-center">
             <Image
               src={"/Fichier 1_lowres.png"}
               alt="Ludimino"
@@ -51,26 +47,44 @@ export default function Home() {
               height={73}
             />
           </div>
-          <ul className={styles.menuList}>
-            <li>
-              <Link href="/"> RÈGLE DU JEU</Link>
-            </li>
-            <li>
-              <Link href="/"> GALERIES </Link>
-            </li>
-            <li>
-              <Link href="/"> ACHETER </Link>
-            </li>
-            <li>
-              <Link href="/"> PANIER </Link>
-            </li>
-            <li>
-              <Link href="/"> CONTACT </Link>
-            </li>
-          </ul>
-          <div className={styles.menuImage}>
+          <div className="flex justify-center">
+            <ul className="*:bg-black *:border-1 *:border-solid-yellow *:rounded-md *:text-white *:tracking-[1px] *:align-middle *:text-center *:p-[6px] *:mt-[10px] *:listnone">
+              <li>
+                <Link href="/" className="text-white no-underline text-sm">
+                  RÈGLE DU JEU
+                </Link>
+              </li>
+              <li>
+                <Link href="/" className="text-white no-underline text-sm">
+                  GALERIES
+                </Link>
+              </li>
+              <li>
+                <Link href="/" className="text-white no-underline text-sm">
+                  ACHETER
+                </Link>
+              </li>
+              <li>
+                <Link href="/" className="text-white no-underline text-sm">
+                  PANIER
+                </Link>
+              </li>
+              <li>
+                <Link href="/" className="text-white no-underline text-sm">
+                  CONTACT
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="mt-[10px]">
             <Link href={"/https://www.instagram.com/ludimino_jeu/"}>
-              <Image src={"/insta.png"} alt="Ludimino" width={60} height={60} />
+              <Image
+                src={"/insta.png"}
+                alt="Ludimino"
+                width={60}
+                height={60}
+                className="align-middle"
+              />
             </Link>
           </div>
         </div>
