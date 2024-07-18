@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
+
 export default function Footer() {
   return (
-    <footer className="flex items-center justify-around px-2 py-2 border-2 border-solid-white font-serif">
+    <footer className="hidden sm:flex items-center justify-around px-2 py-2 border-2 border-solid-white font-serif">
       <div>
         <span>
           Copyright {new Date().getFullYear()} Ludimino - Tous droits réservés
@@ -23,3 +24,6 @@ export default function Footer() {
     </footer>
   );
 }
+
+
+

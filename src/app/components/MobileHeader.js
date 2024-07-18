@@ -1,101 +1,101 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+"use client";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link"; 
-// import 'bootstrap-icons/font/bootstrap-icons.css'
-
+import Link from "next/link";
+import ReorderIcon from "@mui/icons-material/Reorder";
+import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
+import CloseIcon from "@mui/icons-material/Close";
 
 export default function MobileHeader() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, []);
+
   return (
-    <div>
-      <nav className="nav nav-pills nav-justified bg-danger">
-        <div>
-          <a className="navbar-brand nav-link" href="/">
-            <Image
-              src={"/Fichier 1_lowres.png"}
-              alt="Ludimino"
-              width={100}
-              height={73}
-            />
-          </a>
-        </div>
-        <nav className="navbar navbar-dark bg-dark">
-          <div className="container-fluid">
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarToggleExternalContent"
-              aria-controls="navbarToggleExternalContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
+    <>
+      <div className="sticky top-0 border-2 border-solid-black p-[5px] sm:hidden">
+        <div className="flex h-14 items-center justify-between">
+          <div>
+            <Link href={"/"}>
+              <Image
+                src={"/Fichier 1_lowres.png"}
+                alt="Ludimino"
+                width={80}
+                height={70}
+              />
+            </Link>
+          </div>
+          <div className="flex items-center justify-end space-x-3">
+            <div>
+              <button onClick={toggleMenu}>
+                {menuOpen ? (
+                  <CloseIcon className="size-9" />
+                ) : (
+                  <ReorderIcon className="size-9" />
+                )}
+              </button>
+            </div>
+            <div
+              className={`flex flex-col items-end ${
+                menuOpen ? "block" : "hidden"
+              }`}
             >
-              <span className="navbar-toggler-icon"></span>
-            </button>
+              <ul className="flex flex-wrap justify-center">   
+                <li>
+                  <Link href="/" className="text-white no-underline text-sm">
+                    RÈGLE DU JEU
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/" className="text-white no-underline text-sm">
+                    GALERIES
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/" className="text-white no-underline text-sm">
+                    ACHETER
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/" className="text-white no-underline text-sm">
+                    PANIER
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/" className="text-white no-underline text-sm">
+                    CONTACT
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          <div>
+            <Link href={"/#"}>
+              <ShoppingBagIcon className="size-8" />
+            </Link>
           </div>
-        </nav> 
-        <div
-          className="collapse"
-          id="navbarToggleExternalContent"
-          data-bs-theme="dark"
-        >
-          <div className="bg-dark p-4">
-            <h5 className="text-body-emphasis h4">Collapsed content</h5>
-            <span className="text-body-secondary">
-              Toggleable via the navbar brand.
-            </span>
+          <div>
           </div>
-        </div>
-        <div className="container-fluid" data-bs-theme="dark">
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul className="navbar-nav">
-              <li>
-                <a className="nav-link" href="#" role="button">
-                  {" "}
-                  Chicken{" "}
-                </a>
-              </li>
-              <li>
-                <hr className="dropdown-divider" />
-              </li>
-              <li>
-                <a className="nav-link" href="#" role="button">
-                  {" "}
-                  Beef{" "}
-                </a>
-              </li>
-              <li>
-                <hr className="dropdown-divider" />
-              </li>
-              <li>
-                <a className="nav-link" href="#" role="button">
-                  {" "}
-                  Sushi{" "}
-                </a>
-              </li>
-            </ul>
+            <Link
+              href={"/https://www.instagram.com/ludimino_jeu/"}
+              target="_blank"
+            >
+              <Image
+                src={"/insta.png"}
+                alt="Ludimino"
+                width={50}
+                height={45}
+                className="size-10"
+              />
+            </Link>
           </div>
         </div>
-        <a className="nav-link" href="/">
-          <i className="bi bi-bag-fill"> </i> Link 
-        </a>
-        <a
-          className="nav-link disabled"
-          href={"/https://www.instagram.com/ludimino_jeu/"}
-        >
-          <Image src={"/insta.png"} alt="Ludimino" width={50} height={50} />
-        </a>
-      </nav>
-    </div>
+      </div>
+    </>
   );
 }

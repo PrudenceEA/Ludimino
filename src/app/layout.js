@@ -1,6 +1,8 @@
 import './globals.css'
 import { Shojumaru } from 'next/font/google'
 import Footer from './components/footer' 
+import MobileHeader from './components/MobileHeader'
+import MobileFooter from './components/MobileFooter'
 import Image from 'next/image'
 
 const font = Shojumaru({ 
@@ -15,10 +17,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr">    
+    <html lang="fr">       
       <body className={font.className} style={{backgroundImage: `url("/Ludimino_background3-grey-white.png")`, maxHeight:'100%'}}>
-        {children}
+      <MobileHeader/> 
+        {children}        
         <Footer/>
+        <MobileFooter/>
       </body> 
     </html>
   )
